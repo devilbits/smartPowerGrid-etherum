@@ -1,0 +1,96 @@
+<html>
+<head>
+	 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+<title>Web3 Example</title>
+<style>input{ font-size: 20px; }
+form{background-color:lightgoldenrodyellow; margin-left: 500px; margin-right: 500px; padding: 30px; text-align: center;font-size: 20px;}#form1{border-top-right-radius: 10%;border-top-left-radius: 10%;}#form2{border-bottom-left-radius: 50%;border-bottom-right-radius: 50%;}</style></head>
+
+
+<body><form action='/powerGrid/vp/' method="POST"><h1>VP login</h1>
+
+
+<input type="text" id="adrs" name="adrs" placeholder="Enter your address" required/></br></br>
+
+<input type="text" id="pass" name="pass" placeholder="enter your password">
+<br><br>
+<input type="submit"value="Set Student" onclick="set()" /></form><br><br>
+
+
+
+<form action='/powerGrid/grid/' method="POST"><h1>grid login</h1>
+
+
+<input type="text" id="adrs2" name="adrs2" placeholder="Enter your address" required/></br></br>
+
+<input type="text" id="pass2" name="pass2" placeholder="enter a password">
+<br><br>
+<input type="submit"value="Set Student" onclick="set()" /></form><br><br>
+
+<form action='/powerGrid/vpSetup/' method="POST"><h1>Vp Signup</h1>
+
+
+<input type="text" id="adrs1" name="adrs1" placeholder="adrs" required/></br></br>
+
+<input type="text" id="pass1" name="pass1" placeholder="enter your password">
+<br><br>
+<input type="submit"value="Set Student" onclick="set()" /></form><br><br>
+
+
+<form action='/powerGrid/gridSetup/' method="POST"><h1>Grid Signup</h1>
+
+
+<input type="text" id="adrs1" name="adrs3" placeholder="adrs" required/></br></br>
+
+<input type="text" id="pass1" name="pass3" placeholder="enter your password">
+<br><br>
+<input type="submit"value="Set Student" onclick="set()" /></form><br><br>
+
+</body>
+
+
+<script>
+	function set1(){
+	
+		var adrs = document.getElementById('adrs').value;
+		var pass = document.getElementById('pass').value;
+		
+         if(adrs.length!=0){
+		$.post('/powerGrid/vp/',{adrs:adrs,pass:pass},(data, textStatus, jqXHR)=>{},'json');
+       }else{alert('please enter correct data');}
+	}
+			function set2(){
+	
+		var adrs = document.getElementById('adrs1').value;
+		var pass = document.getElementById('pass1').value;
+		
+         if(adrs.length!=0){
+		$.post('/powerGrid/grid/',{adrs:adrs,pass:pass},(data, textStatus, jqXHR)=>{},'json');
+       }else{alert('please enter correct data');}
+	}
+		
+			function set3(){
+	
+		var adrs = document.getElementById('adrs1').value;
+		var pass = document.getElementById('pass1').value;
+		
+         if(adrs.length!=0){
+		$.post('/powerGrid/vpSetup/',{adrs:adrs,pass:pass},(data, textStatus, jqXHR)=>{},'json');
+       }else{alert('please enter correct data');}
+	}
+
+
+</script>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

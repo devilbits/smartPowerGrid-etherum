@@ -1,0 +1,21 @@
+
+address:<%=adrs%><br>
+max pow:<%=pow%><br>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+<input type="text" id="adrs" placeholder="enter grid ddress">
+<input type="text" id="val1" placeholder=enter grid power">
+<button id="grid" onclick="test()">create grid</button>
+
+
+
+
+<script>
+function test(){
+	var adrs = document.getElementById('adrs').value;
+	var power= document.getElementById('val1').value;
+	alert('grid creation process initiated');
+	$.post('/powerGrid/gridStatus/',{adrs:adrs,max_power:max_power})
+}
+
+</script>
